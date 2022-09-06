@@ -4,16 +4,20 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = "all", -- one of "all" or a list of languages
-	sync_install = false,
+  ensure_installed = "all", -- one of "all" or a list of languagesync_install
+  sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
-	highlight = {
-		enable = true, -- false will disable the whole extension
-		disable = { "" }, -- list of language that will be disabled
+  autopairs = {
+    enable = true,
+  },
+  highlight = {
+    enable = true, -- false will disable the whole extension
+    disable = { "" }, -- list of language that will be disabled
     additional_vim_regex_highlighting = true,
-	},
-	autopairs = {
-		enable = true,
-	},
-	indent = { enable = true, disable = { "" } },
+  },
+  indent = { enable = true, disable = { "" } },
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
+  },
 })
